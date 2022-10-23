@@ -98,6 +98,7 @@ class NewContentManager
     protected static function OnAfterUserSave($ID, &$arFields)
     {
         static::notifyOfNewContentManagers(array_keys(self::$previousContentManagers), [strval($ID)]);
+        self::$previousContentManagers = null;
     }
 
     /**
@@ -110,8 +111,13 @@ class NewContentManager
         }
 
         try {
+            try {
+                $contentManagersId = GroupHelper::contentManagersId();
+            } catch (SystemException $e) {
+                return;
+            }
             $ID = strval($ID);
-            if ($ID === GroupHelper::contentManagersId()) {
+            if ($ID === $contentManagersId) {
                 $previousContentManagers = UserHelper::getContentManagers();
 
                 if (!empty($previousContentManagers)) {
