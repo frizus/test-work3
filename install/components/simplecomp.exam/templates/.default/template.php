@@ -2,11 +2,6 @@
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
-
-use Bitrix\Main\Page\Asset;
-
-$asset = Asset::getInstance();
-$asset->addCss('https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css');
 ?>
 <div class="container mt-4">
     <h1 class="h4 mb-4">Каталог</h1>
