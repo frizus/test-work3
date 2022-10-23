@@ -98,6 +98,7 @@ class NewContentManager
     protected static function OnAfterUserSave($ID, &$arFields)
     {
         static::notifyOfNewContentManagers(array_keys(self::$previousContentManagers), [strval($ID)]);
+        self::$savingUserId = null;
         self::$previousContentManagers = null;
     }
 
