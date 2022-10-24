@@ -15,7 +15,7 @@ Loader::includeModule('frizus.middle');
 Loader::includeModule('iblock');
 
 $APPLICATION->IncludeComponent(
-	"frizus.middle:simplecomp.exam",
+	"frizus:simplecomp.exam",
 	"",
 	Array(
 		"CACHE_TIME" => "36000000",
