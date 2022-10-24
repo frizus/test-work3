@@ -50,8 +50,7 @@ class frizus_middle extends CModule
         $eventManager->unRegisterEventHandler('main', 'OnAfterUserUpdate', $this->MODULE_ID, NewContentManager::class, 'OnAfterUserUpdate');
         $eventManager->unRegisterEventHandler('main', 'OnBeforeGroupUpdate', $this->MODULE_ID, NewContentManager::class, 'OnBeforeGroupUpdate');
         $eventManager->unRegisterEventHandler('main', 'OnAfterGroupUpdate', $this->MODULE_ID, NewContentManager::class, 'OnAfterGroupUpdate');
-
-        DeleteDirFiles(__DIR__ . '/components/', $_SERVER['DOCUMENT_ROOT'] . '/bitrix/components/' . explode('.', $this->MODULE_ID, 2)[0] . '/');
+        
         ModuleManager::unRegisterModule($this->MODULE_ID);
     }
 }
