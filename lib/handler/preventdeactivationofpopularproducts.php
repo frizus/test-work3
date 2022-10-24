@@ -16,9 +16,14 @@ class PreventDeactivationOfPopularProducts
         }
 
         try {
+            try {
+                $catalogId = IBlockHelper::catalogId();
+            } catch (SystemException $e) {
+                return;
+            }
             $iblockId = self::getIBlockId($arFields);
 
-            if ($iblockId === IBlockHelper::catalogId()) {
+            if ($iblockId === $catalogId) {
                 $row = self::$element ?? IBlockElementHelper::getElement($arFields['ID']);
 
                 if (isset($row['SHOW_COUNTER']) &&

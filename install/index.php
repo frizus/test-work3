@@ -50,7 +50,7 @@ class frizus_middle extends CModule
         $eventManager->unRegisterEventHandler('main', 'OnAfterUserUpdate', $this->MODULE_ID, NewContentManager::class, 'OnAfterUserUpdate');
         $eventManager->unRegisterEventHandler('main', 'OnBeforeGroupUpdate', $this->MODULE_ID, NewContentManager::class, 'OnBeforeGroupUpdate');
         $eventManager->unRegisterEventHandler('main', 'OnAfterGroupUpdate', $this->MODULE_ID, NewContentManager::class, 'OnAfterGroupUpdate');
-        
+
         ModuleManager::unRegisterModule($this->MODULE_ID);
     }
 }
